@@ -1,0 +1,18 @@
+{
+  "parent": "minecraft:item/handheld",
+  "loader": "forge:separate_transforms",
+  "base": {
+    "parent": "dnd:item/lance_3d"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "dnd:item/lance_2d"
+    },
+    "ground": {
+      "parent": "dnd:item/lance_2d"
+    },
+    "fixed": {
+      "parent": "dnd:item/lance_2d"
+    }
+  }
+}

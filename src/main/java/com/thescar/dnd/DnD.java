@@ -1,7 +1,15 @@
 package com.thescar.dnd;
 
 import com.mojang.logging.LogUtils;
+import com.thescar.dnd.block.ModBlocks;
+import com.thescar.dnd.entity.ModEntities;
+import com.thescar.dnd.entity.client.WargRenderer;
+import com.thescar.dnd.item.ModCreativeModeTabs;
+import com.thescar.dnd.item.ModItems;
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -22,19 +30,29 @@ public class DnD {
     public DnD() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModCreativeModeTabs.register(modEventBus);
+
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
+
+        ModEntities.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
 
     }
 
-    // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            //event.accept(ModItems.RUBY);
+            //event.accept(ModItems.WYVERN_STINGER);
+            //event.accept(ModItems.STEEL_INGOT);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
@@ -48,7 +66,11 @@ public class DnD {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+        event.enqueueWork(() -> {
 
+
+            EntityRenderers.register(ModEntities.WARG.get(), WargRenderer::new);
+            });
         }
     }
 }
