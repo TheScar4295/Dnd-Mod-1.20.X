@@ -13,7 +13,10 @@
   "item.dnd.mithril_ingot": "Mithril Ingot",
   "item.dnd.oldforged_ingot": "Oldforged Ingot",
 
+  "entity.dnd.warg": "Warg",
   "item.dnd.warg_spawn_egg": "Warg Spawn Egg",
+
+  "item.dnd.kite_shield": "Kite Shield",
 
   "item.dnd.steel_helmet": "Steel Helmet",
   "item.dnd.steel_chestplate": "Steel Chestplate",
@@ -59,6 +62,7 @@
   "item.dnd.dragonbone_hoe": "Dragon Bone Hoe",
 
 
+  "block.dnd.vase": "Vase",
   "block.dnd.adamantite_ore": "Adamantite Ore",
   "block.dnd.deepslate_adamantite_ore": "Deepslate Adamantite Ore",
   "block.dnd.raw_adamantite_block": "Block Of Raw Adamantite",
@@ -206,5 +210,6 @@
   "block.dnd.chiseled_lavarock": "Chiseled Lavarock",
   "block.dnd.lavarock_pillar": "Lavarock Pillar",
 
-  "creativetab.dnd_tab": "Dragons & Dungeons"
+  "creativetab.dnd_tab": "Dragons & Dungeons",
+  "effect.dnd.intoxicated": "Intoxicated"
 }

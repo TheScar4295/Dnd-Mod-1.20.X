@@ -1,6 +1,7 @@
 package com.thescar.dnd.block;
 
 import com.thescar.dnd.DnD;
+import com.thescar.dnd.block.custom.VaseBlock;
 import com.thescar.dnd.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -20,6 +21,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> RAW_ADAMANTITE_BLOCK = registerBlock("raw_adamantite_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.RAW_IRON_BLOCK)));
+
+    public static final RegistryObject<Block> VASE = registerBlock("vase",
+            () -> new VaseBlock(BlockBehaviour.Properties.copy(Blocks.DECORATED_POT).noOcclusion()));
 
     public static final RegistryObject<Block> SHALE = registerBlock("shale",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));

@@ -14,7 +14,8 @@ public class ModEntities {
            DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, DnD.MOD_ID);
 
    public static final RegistryObject<EntityType<WargEntity>> WARG =
-           ENTITY_TYPES.register("warg", () -> EntityType.Builder.of(WargEntity::new, MobCategory.CREATURE)
+           ENTITY_TYPES.register("warg",
+                   () -> EntityType.Builder.of(WargEntity::new, MobCategory.CREATURE)
                    .sized(1.3f, 1.7f).build("warg"));
 
    public static void register(IEventBus eventBus) {

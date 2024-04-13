@@ -200,6 +200,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.add(ModBlocks.DEEPSLATE_ADAMANTITE_ORE.get(),
                 block -> createCopperLikeOreDrops(ModBlocks.DEEPSLATE_ADAMANTITE_ORE.get(), ModItems.RAW_ADAMANTITE.get()));
 
+        this.dropSelf(ModBlocks.VASE.get());
+
     }
 
     protected LootTable.Builder createCopperLikeOreDrops(Block pBlock, Item item) {

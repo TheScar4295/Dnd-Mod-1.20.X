@@ -22,6 +22,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.ADAMANTITE_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_ADAMANTITE_ORE);
 
+        horizontalBlock(ModBlocks.VASE.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/vase")));
+
         blockWithItem(ModBlocks.SHALE);
         wallBlock((WallBlock) ModBlocks.SHALE_WALL.get(), blockTexture(ModBlocks.SHALE.get()));
         stairsBlock((StairBlock) ModBlocks.SHALE_STAIRS.get(), blockTexture(ModBlocks.SHALE.get()));

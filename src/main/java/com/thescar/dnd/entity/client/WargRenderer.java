@@ -4,17 +4,16 @@ import com.google.common.collect.Maps;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.thescar.dnd.DnD;
 import com.thescar.dnd.entity.custom.WargEntity;
-import com.thescar.dnd.entity.layers.ModModelLayers;
 import com.thescar.dnd.entity.variant.WargVariant;
 import net.minecraft.Util;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
+import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
 import java.util.Map;
 
-public class WargRenderer extends MobRenderer<WargEntity, WargModel<WargEntity>> {
+public class WargRenderer extends GeoEntityRenderer<WargEntity> {
     private static final Map<WargVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(WargVariant.class), map -> {
                 map.put(WargVariant.PALE,
@@ -39,8 +38,9 @@ public class WargRenderer extends MobRenderer<WargEntity, WargModel<WargEntity>>
                         new ResourceLocation(DnD.MOD_ID, "textures/entity/zarg_warg.png"));
             });
 
-    public WargRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext, new WargModel<>(pContext.bakeLayer(ModModelLayers.WARG_LAYER)), 1f);
+
+    public WargRenderer(EntityRendererProvider.Context renderManager) {
+        super(renderManager, new WargModel());
     }
 
     @Override
@@ -49,16 +49,12 @@ public class WargRenderer extends MobRenderer<WargEntity, WargModel<WargEntity>>
     }
 
     @Override
-    public void render(WargEntity pEntity, float pEntityYaw, float pPartialTicks,
-                       PoseStack pMatrixStack, MultiBufferSource pBuffer, int pPackedLight) {
-        if (pEntity.isBaby()) {
-            pMatrixStack.scale(0.45f, 0.45f, 0.45f);
+    public void render(WargEntity entity, float entityYaw, float partialTick, PoseStack poseStack,
+                       MultiBufferSource bufferSource, int packedLight) {
+        if(entity.isBaby()) {
+            poseStack.scale(0.4f, 0.4f, 0.4f);
         }
 
-        if(pEntity.getVariant().getId() == 9) {
-            pMatrixStack.scale(1f, 1f, 1f);
-        }
-
-        super.render(pEntity, pEntityYaw, pPartialTicks, pMatrixStack, pBuffer, pPackedLight);
+        super.render(entity, entityYaw, partialTick, poseStack, bufferSource, packedLight);
     }
 }

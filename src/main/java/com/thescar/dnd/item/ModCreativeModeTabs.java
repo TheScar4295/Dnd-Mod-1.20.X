@@ -20,6 +20,7 @@ public class ModCreativeModeTabs {
 
                         pOutput.accept(ModItems.WARG_SPAWN_EGG.get());
 
+
                         pOutput.accept(ModItems.RUBY.get());
                         pOutput.accept(ModItems.WYVERN_STINGER.get());
                         pOutput.accept(ModItems.RAW_ADAMANTITE.get());
@@ -35,6 +36,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.DRAUGR_AXE.get());
                         pOutput.accept(ModItems.DANE_AXE.get());
                         pOutput.accept(ModItems.WARTORN_DANE_AXE.get());
+                        pOutput.accept(ModItems.KITE_SHIELD.get());
                         pOutput.accept(ModItems.STEEL_INGOT.get());
                         pOutput.accept(ModItems.STEEL_SWORD.get());
                         pOutput.accept(ModItems.STEEL_AXE.get());
@@ -76,6 +78,8 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.DRAGONBONE_CHESTPLATE.get());
                         pOutput.accept(ModItems.DRAGONBONE_LEGGINGS.get());
                         pOutput.accept(ModItems.DRAGONBONE_BOOTS.get());
+
+                        pOutput.accept(ModBlocks.VASE.get());
 
                         pOutput.accept(ModBlocks.ADAMANTITE_ORE.get());
                         pOutput.accept(ModBlocks.DEEPSLATE_ADAMANTITE_ORE.get());

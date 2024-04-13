@@ -107,6 +107,13 @@ public class ModItemModelProvider extends ItemModelProvider {
         wallItem(ModBlocks.POLISHED_LAVAROCK_WALL, ModBlocks.POLISHED_LAVAROCK);
         wallItem(ModBlocks.SHINGLE_WALL, ModBlocks.SHINGLES);
         wallItem(ModBlocks.RUINED_SHINGLE_WALL, ModBlocks.RUINED_SHINGLES);
+
+        complexBlock(ModBlocks.VASE.get());
+    }
+
+    private ItemModelBuilder complexBlock(Block block) {
+        return withExistingParent(ForgeRegistries.BLOCKS.getKey(block).getPath(), new ResourceLocation(DnD.MOD_ID,
+                "block/" + ForgeRegistries.BLOCKS.getKey(block).getPath()));
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

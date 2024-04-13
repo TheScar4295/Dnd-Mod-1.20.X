@@ -2,6 +2,7 @@ package com.thescar.dnd;
 
 import com.mojang.logging.LogUtils;
 import com.thescar.dnd.block.ModBlocks;
+import com.thescar.dnd.effect.ModEffects;
 import com.thescar.dnd.entity.ModEntities;
 import com.thescar.dnd.entity.client.WargRenderer;
 import com.thescar.dnd.item.ModCreativeModeTabs;
@@ -36,6 +37,8 @@ public class DnD {
         ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
+
+        ModEffects.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);

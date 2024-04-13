@@ -90,6 +90,9 @@ public class ModItems {
             DragonPlateArmorItem(ModArmorMaterials.DRAGONBONE, ArmorItem.Type.BOOTS, new Item.Properties()));
 
 
+    public static final RegistryObject<Item> KITE_SHIELD = ITEMS.register("kite_shield", () -> new ShieldItem(new Item.Properties().durability(500)));
+
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
